@@ -1,6 +1,7 @@
 package com.zinoviev.core.dto.event;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class ProductCreatedEvent {
 
@@ -52,5 +53,18 @@ public class ProductCreatedEvent {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductCreatedEvent that = (ProductCreatedEvent) o;
+        return Objects.equals(productId, that.productId) && Objects.equals(title, that.title) && Objects.equals(price, that.price) && Objects.equals(quantity, that.quantity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productId, title, price, quantity);
     }
 }

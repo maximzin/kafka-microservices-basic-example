@@ -17,3 +17,4 @@ https://github.com/maximzin/kafka-cluster-docker-example.git
 - Обработка Deserialization Exception 
 - Кастомные исключения для обработки Retryable и Non-Retryable ошибок
 - Dead Letter Topic
+- Тестирование продюсера, идемпотентности, потребителя

@@ -35,7 +35,7 @@ public class KafkaConfig {
     @Value("${spring.kafka.producer.properties.max.in.flight.requests.per.connection}")
     private String maxInFlightRequestsPerConnection;
 
-    @Value("${spring.kafka.producer.retries")
+    @Value("${spring.kafka.producer.retries}")
     private String retries;
 
     @Value("${spring.kafka.producer.properties.delivery.timeout.ms}")
@@ -59,6 +59,7 @@ public class KafkaConfig {
         config.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, deliveryTimeoutMs);
         config.put(ProducerConfig.LINGER_MS_CONFIG, lingerMs);
         config.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, requestTimeoutMs);
+        config.put(ProducerConfig.RETRIES_CONFIG, retries);
 
         return config;
     }
